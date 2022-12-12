@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Net;
 using DemoUI.Lib;
 using DemoUI.Mapper;
+using DemoUI.Middlewares;
 
 void GetDefaultHttpClient(IServiceProvider serviceProvider, HttpClient httpClient, string hostUri)
 {
@@ -122,6 +123,8 @@ app.UseStaticFiles(new StaticFileOptions
 
 app.UseRouting();
 app.UseCookiePolicy();
+
+app.UseMiddleware<SecurityHeadersMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();
