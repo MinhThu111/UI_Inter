@@ -40,7 +40,7 @@ namespace DemoUI.Controllers
         [HttpGet]//ok
         public async Task<JsonResult> GetList(string status)
         {
-            var res = await _s_person.getListPersonBySequenceStatus(_accessToken, status);
+            var res = await _s_person.getListPerson(_accessToken);
 
             return Json(new M_JResult(res));
         }
@@ -56,8 +56,8 @@ namespace DemoUI.Controllers
         [HttpGet]//ok
         public async Task<IActionResult> P_Add()
         {
-            SessionExtensionMethod.SetObject<string>(HttpContext.Session, "Mouse1", "200,000d");
-            CookieHandleExtensionMethod.AddOrUpdate(HttpContext, "Mouse", "300,000d", DateTime.Now.AddSeconds(10));
+            //SessionExtensionMethod.SetObject<string>(HttpContext.Session, "Mouse1", "200,000d");
+            //CookieHandleExtensionMethod.AddOrUpdate(HttpContext, "Mouse", "300,000d", DateTime.Now.AddSeconds(10));
             Task task1 = SetDropDownNationality(),
             task2 = SetDropDownPersonType(),
             task3 = SetDropDownFolk(),
