@@ -1,0 +1,46 @@
+﻿@model DemoUI.Models.M_UploadSingleFile
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="UploadFile" id="form_data" asp-antiforgery="true">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Student</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label asp-for="id" class="col-md-2 control-label"></label>
+                    <input asp-for="id" class="form-control">
+                    <span asp-validation-for="id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Choose your file</label>-->
+                    <input asp-for="singlefile" type="file" class="form-control dropify"
+                          />
+                    <span asp-validation-for="singlefile" class="text-danger"></span>
+                </div>
+                <!--<div class="dropzone" id="my-dropzone">
+
+                    <label class="col-md-4 control-label">Choose your file</label>-->
+                @*<input asp-for="singlefile" type="file" class="form-control dropify"
+                    single data-max-file-size="3M"
+                    data-allowed-file-extensions="pdf png psd"
+                    data-height="100">*@
+
+                @*<div class=" fallback">
+                        <input type="file" asp-for="singlefile" class="form-control" />
+                    </div>*@
+                <!--</div>-->
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" value="Cancel" class="btn btn-outline-secondary waves-effect " onclick="BackToTable('#div_main_table', '#div_view_panel');" />
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+

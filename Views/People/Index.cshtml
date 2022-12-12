@@ -1,0 +1,46 @@
+﻿@model DemoUI.Models.M_Person;
+
+@section Styles{
+    <partial name="_P_StylesTableAndFormBasic" />
+}
+
+@section Scripts{
+    <partial name="_P_ScriptsTableAndFormBasic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    @*<script src="~/controllers/people_manage.js" asp-append-version="true"></script>*@
+    <link href="~/css/student_css.css" rel="stylesheet" />
+
+}
+
+
+<h1>PEOPLE</h1>
+<div id="div_main_table">
+    <div class="col-auto mb-1 px-1">
+        <a href="#addNewPersonModal" class="btn btn-outline-info" onclick="ShowAddModal(this)"><i class="material-icons">&#xE147;</i> <span>Add New Student</span></a>
+        <button class="btn btn-outline-dark" onclick="LoadDataTable()"><i class="material-icons">&#xe5d5;</i> <span>Load</span></button>
+    </div>
+    <table id="table_main" class="table table-striped table-bordered w-100">
+        <thead class="thead_custom">
+            <tr>
+                <th>Stt</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>timer</th>
+                <th>Acction</th>
+            </tr>
+        </thead>
+        <tfoot class="tfoot_custom">
+            <tr>
+                <th>Stt</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>timer</th>
+                <th>Acction</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="card-body card_background_detail" id="div_view_panel" style="display:none;"></div>

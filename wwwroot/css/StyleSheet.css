@@ -1,0 +1,28 @@
+﻿
+#left, #content {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+    padding: 150px 30px;
+    background-color: antiquewhite;
+    height: 1000px;
+}
+#content {
+    width: 70%;
+    background-color: aliceblue;
+    height:1000px;
+}
+#footer {
+    width:100%;
+    padding: 20px;
+}
+*[data-editor-field] {
+    border: 1px dashed #ccc;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+*[data-editor-field]:hover {
+  background: #f3f3f3;
+  border: 1px dashed #333;
+}

@@ -1,0 +1,33 @@
+﻿@model DemoUI.Models.M_UploadMultipleFile
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="UploadFile" id="form_data" asp-antiforgery="true">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Student</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label asp-for="id" class="col-md-2 control-label"></label>
+                    <input asp-for="id" class="form-control">
+                    <span asp-validation-for="id"></span>
+                </div>
+                <div class=" form-group">
+                    <label class="col-form-label">Select Multiple Files</label>
+                    <input asp-for="multiplefiles" class="form-control dropify" 
+                          data-max-file-size="5M"
+                          data-allowed-file-extensions="jpg png"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" value="Cancel" class="btn btn-outline-secondary waves-effect " onclick="BackToTable('#div_main_table', '#div_view_panel');" />
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+}

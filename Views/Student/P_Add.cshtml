@@ -1,0 +1,44 @@
+﻿@*@model M_Student;
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="P_Edit" id="form_data" asp-antiforgery="true">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Student</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label asp-for="id" class="col-md-2 control-label"></label>
+                    <input asp-for="id" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="lastName" class="col-md-2 control-label"></label>
+                    <input asp-for="lastName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="gender" class="col-md-2 control-label"></label>
+                    <input asp-for="gender" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="email" class="col-md-2 control-label"></label>
+                    <input asp-for="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="avatar" class="col-md-2 control-label"></label>
+                    <input asp-for="avatar" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="className" class="col-md-2 control-label"></label>
+                    <input asp-for="className" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="schoolName" class="col-md-2 control-label"></label>
+                    <input asp-for="schoolName" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" value="Cancel" class="btn btn-outline-secondary waves-effect " onclick="BackToTable('#div_main_table', '#div_view_panel');" />
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+    </div>
+</div>*@

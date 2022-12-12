@@ -1,0 +1,64 @@
+﻿@model DemoUI.Models.M_Person;
+
+@section Styles{
+    <partial name="_P_StylesTableAndFormBasic" />
+}
+
+@section Scripts{
+    <partial name="_P_ScriptsTableAndFormBasic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="~/controllers/people_manage.js" asp-append-version="true"></script>
+    <link href="~/css/student_css.css" rel="stylesheet" asp-append-version="true" />
+    
+   
+}
+
+<h1>Person</h1>
+<h1>@ViewBag.Mouse2 </h1>
+<div id="div_main_table">
+    <div class="col-xl-3 col-lg-2 col-md-4 mb-1 px-1">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="select_search_status">
+                    <i class="material-icons">&#xf023;</i>Trạng thái
+                </label>
+            </div>
+            <select id="select_search_status" class="selectpicker show-tick form-control p-0"
+                    onchange="SearchStatus()" data-style="btn-white btn-sm"
+                    data-live-search="false" data-size="10">
+                <option value="0,1">--Tất cả--</option>
+                <option class="text-success" value="1">Mở</option>
+                <option class="text-warning" value="0">Khóa</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-auto mb-1 px-1">
+        <a href="#addNewPersonModal" class="btn btn-outline-info" onclick="ShowAddModal(this)"><i class="material-icons">&#xE147;</i> <span>Add New Student</span></a>
+        <button class="btn btn-outline-dark" onclick="LoadDataTable()"><i class="material-icons">&#xe5d5;</i> <span>Load</span></button>
+    </div>
+    <table id="table_main" class="table table-striped table-bordered w-100">
+        <thead class="thead_custom">
+            <tr>
+                <th>Stt</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>timer</th>
+                <th>Acction</th>
+            </tr>
+        </thead>
+        <tfoot class="tfoot_custom">
+            <tr>
+                <th>Stt</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>timer</th>
+                <th>Acction</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="card-body card_background_detail" id="div_view_panel" style="display:none;"></div>
+

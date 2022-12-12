@@ -1,0 +1,42 @@
+﻿@section Styles{
+    <partial name="_P_StylesTableAndFormBasic" />
+    <link rel="stylesheet"
+          href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+          type="text/css" />
+    <link href="~/assets/libs/dropify/css/dropify.min.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    <partial name="_P_ScriptsTableAndFormBasic" />
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="~/assets/libs/dropify/js/dropify.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="~/css/student_css.css" rel="stylesheet" />
+    <script src="~/controllers/upload_file.js" asp-append-version="true"></script>
+}
+@model DemoUI.Models.M_FileName
+<div class="col-auto mb-1 px-1">
+    <a href="#uploadSingleFileModal" class="btn btn-outline-info" onclick="ShowAddSingleFileModal(this)"><i class="material-icons">&#xE147;</i> <span>Upload Single File</span></a>
+    <a href="#uploadSingleFileModal" class="btn btn-outline-info" onclick="ShowAddMutipleFileModal(this)"><i class="material-icons">&#xE147;</i> <span>Upload Mutiple File</span></a>
+</div>
+<div>
+    <table id="table_main" class="table table-striped table-bordered w-100">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th class="fName">File Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>STT</th>
+                <th>File Name</th>
+                <th>Action</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="card-body card_background_detail" id="div_view_panel" style="display:none;"></div>
