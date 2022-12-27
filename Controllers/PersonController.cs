@@ -40,7 +40,7 @@ namespace DemoUI.Controllers
         [HttpGet]//ok
         public async Task<JsonResult> GetList(string status)
         {
-            var res = await _s_person.getListPersonBySequenceStatus(_accessToken, status);
+            var res = await _s_person.getListPerson(_accessToken);
 
             return Json(new M_JResult(res));
         }

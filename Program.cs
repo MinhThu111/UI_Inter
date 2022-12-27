@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Net;
 using DemoUI.Lib;
 using DemoUI.Mapper;
+using DemoUI.Middlewares;
 
 void GetDefaultHttpClient(IServiceProvider serviceProvider, HttpClient httpClient, string hostUri)
 {
@@ -106,7 +107,7 @@ else
 app.UseRequestLocalization();
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
-//app.UseMiddleware<SecurityHeadersMiddleware>(); //App config security header
+app.UseMiddleware<SecurityHeadersMiddleware>(); //App config security header
 
 app.UseHttpsRedirection();
 //app.UseStaticFiles();

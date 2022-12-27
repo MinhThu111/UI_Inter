@@ -2,7 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
+@section Scripts{
+    <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js"></script>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+@*<div class="row">
+    @for (int i = 11172110; i < 11172222; i++)
+    {
+        <div class="col-6">
+            <img 
+                 data-sizes="auto"
+    data-src="https://images.pexels.com/photos/@i/pexels-photo-@(i).jpeg" class="lazyload"
+                 alt="@i" height="150" />
+        </div>
+    }
+</div>*@

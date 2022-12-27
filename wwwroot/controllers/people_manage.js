@@ -34,75 +34,75 @@ const statusHtml = function (status) {
 }
 
 //Load data using fetch
-function LoadDataUsingFetch() {
+//function LoadDataUsingFetch() {
 
-    let url = 'https://localhost:7146/Person/getListPerson';
-    var mili = new Request(url, {
-        method: 'GET',
-        headers: new Headers({
-            "Accept": "application/json; odata=verbose",
-        })
-    });
-    fetch(mili)
-        .then((response) => response.json())
-        .then((data) => {
-            let items = data.data;
-            if (data.data != null && data.data != undefined && data.data.length > 0) {
-                dataTable = $tableMain.DataTable({
-                    lengthChange: true,
-                    lengthMenu: _lengthMenuResource,
-                    colReorder: { allowReorder: false },
-                    select: false,
-                    scrollX: true,
-                    stateSave: false,
-                    processing: true,
-                    responsive: { details: true },
-                    //get data
-                    data: items,
-                    rowId: "id",
-                    //column name
-                    columns: [
-                        {
-                            title: "STT",
-                            data: null,
-                            render: (data, type, row, meta) => ++meta.row,
-                            className: "text-center"
-                        },
-                        {
-                            data: "Id",
-                            render: (data, type, row, meta) => `<a class="table_a_href" onclick="ShowViewModal(this, '${row.Id}')" href="javascript:void(0);">${row.LastName} ${row.FirstName}</a>`,
-                        },
-                        {
-                            data: "Birthday",
-                            render: (data) => new Date(data).toLocaleDateString(),
-                            className: "text-center text-nowrap",
-                        },
-                        {
-                            data: "Status",
-                            render: (data, type, row, meta) => statusHtml(data),
-                            className: "text-center text-nowrap",
-                        },
-                        {
-                            data: "Timer",
-                            render: (data) => new Date(data).toLocaleDateString(),
-                            className: "text-center text-nowrap",
-                        },
-                        {
-                            data: "Id",
-                            render: (data, type, row, meta) => buttonActionHtml(data, row.status, row.timer),
-                            orderable: false,
-                            searchable: false,
-                            className: "text-center text-nowrap"
-                        }
-                    ],
-                    language: _languageDataTalbeObj,
-                    drawCallback: _dataTablePaginationStyle,
-                    initComplete: function () { jQuery(jQuery.fn.dataTable.tables(true)).DataTable().columns.adjust().draw(); }
-                });
-                console.log(items);
-            }
-        })
-}
+//    let url = 'https://localhost:7146/Person/getListPerson';
+//    var mili = new Request(url, {
+//        method: 'GET',
+//        headers: new Headers({
+//            "Accept": "application/json; odata=verbose",
+//        })
+//    });
+//    fetch(mili)
+//        .then((response) => response.json())
+//        .then((data) => {
+//            let items = data.data;
+//            if (data.data != null && data.data != undefined && data.data.length > 0) {
+//                dataTable = $tableMain.DataTable({
+//                    lengthChange: true,
+//                    lengthMenu: _lengthMenuResource,
+//                    colReorder: { allowReorder: false },
+//                    select: false,
+//                    scrollX: true,
+//                    stateSave: false,
+//                    processing: true,
+//                    responsive: { details: true },
+//                    //get data
+//                    data: items,
+//                    rowId: "id",
+//                    //column name
+//                    columns: [
+//                        {
+//                            title: "STT",
+//                            data: null,
+//                            render: (data, type, row, meta) => ++meta.row,
+//                            className: "text-center"
+//                        },
+//                        {
+//                            data: "Id",
+//                            render: (data, type, row, meta) => `<a class="table_a_href" onclick="ShowViewModal(this, '${row.Id}')" href="javascript:void(0);">${row.LastName} ${row.FirstName}</a>`,
+//                        },
+//                        {
+//                            data: "Birthday",
+//                            render: (data) => new Date(data).toLocaleDateString(),
+//                            className: "text-center text-nowrap",
+//                        },
+//                        {
+//                            data: "Status",
+//                            render: (data, type, row, meta) => statusHtml(data),
+//                            className: "text-center text-nowrap",
+//                        },
+//                        {
+//                            data: "Timer",
+//                            render: (data) => new Date(data).toLocaleDateString(),
+//                            className: "text-center text-nowrap",
+//                        },
+//                        {
+//                            data: "Id",
+//                            render: (data, type, row, meta) => buttonActionHtml(data, row.status, row.timer),
+//                            orderable: false,
+//                            searchable: false,
+//                            className: "text-center text-nowrap"
+//                        }
+//                    ],
+//                    language: _languageDataTalbeObj,
+//                    drawCallback: _dataTablePaginationStyle,
+//                    initComplete: function () { jQuery(jQuery.fn.dataTable.tables(true)).DataTable().columns.adjust().draw(); }
+//                });
+//                console.log(items);
+//            }
+//        })
+//}
 
 //get data form controller
 const dataParamsTable = function (method = 'GET') {
@@ -111,7 +111,7 @@ const dataParamsTable = function (method = 'GET') {
         type: method,
         url: '/Person/GetList',
         data: function (d) {
-            d.status = $selectSearchStatus.val();
+            //d.status = $selectSearchStatus.val();
             console.log("aaaaa");
         },
         dataType: 'json',
